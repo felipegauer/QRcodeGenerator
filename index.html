@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="sortcut icon" type="x-icon" href="./images/icon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>QR Generator</title>
+</head>
+<body>
+    <div class="container">
+        <p id="text">Digite a URL</p>
+
+        <div id="qrcode">
+            <img src="" id="qrImage">
+        </div>
+
+        <input class="input-text" type="text" placeholder="URL" id="qrText">
+        <button class="button-generate" onclick="generateQRCode()">Gerar QR Code</button>
+    </div>
+
+    <div class="signature">Felipe Gauer</div>
+
+    <script>
+        let qrcode = document.getElementById("qrcode");
+        let qrImage = document.getElementById("qrImage");
+        let qrText = document.getElementById("qrText");
+
+        qrText.addEventListener('keydown', function(event) {
+            if (event.key == 'Enter') {
+                generateQRCode();
+            }
+        })
+
+        function generateQRCode(){
+            if (qrText.value.length > 0) {
+                qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + qrText.value;
+                qrcode.classList.add("show-img");
+            }else{
+                qrText.classList.add("error");
+                setTimeout(()=>{
+                    qrText.classList.remove("error");
+                },500)
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>

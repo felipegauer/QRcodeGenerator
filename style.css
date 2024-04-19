@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1e2731;
+}
+
+.container{
+    width: 400px;
+    padding: 25px 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 15px;
+}
+
+#text{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    cursor: default;
+    
+}
+
+.input-text{
+    width: 100%;
+    padding: 8px;
+    margin:15px 0;
+    border:1px solid black;
+    border-radius: 7px;
+
+}
+
+.button-generate{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    cursor: pointer;
+
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: #03254d;
+    color: whitesmoke;
+
+    border: 0;
+    border-radius: 7px;
+    box-shadow: 0 5px 5px rgba(0,0,0, 0.5);
+
+    font-weight: 500;
+}
+
+#qrcode{
+    width: 200px;
+    overflow: hidden;
+    max-height: 0;
+
+    transition: max-height 1s;
+}
+
+#qrcode img{
+    width: 100%;
+    padding: 5px;
+}
+#qrcode.show-img{
+    max-height: 250px;
+    margin: 5px auto;
+}
+
+.error{
+    animation: shake 0.1s linear 5; 
+}
+@keyframes shake {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-1px);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(1px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.signature{
+    color: whitesmoke;
+    position:fixed;
+    padding-right: 10px;
+    bottom: 0;
+    right: 0;
+}
