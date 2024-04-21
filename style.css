@@ -56,6 +56,10 @@ body{
     font-weight: 500;
 }
 
+.button-generate:hover{
+    background-color: #021e3d;
+}
+
 #qrcode{
     width: 200px;
     overflow: hidden;
